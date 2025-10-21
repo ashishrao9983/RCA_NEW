@@ -4,144 +4,116 @@ import { useState } from 'react';
 
 const coordinators = [
   {
-    name: "Anil Jangid",
+    name: "Dinesh Yadav",
     role: "Coordinator",
-    image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898982/Dinesh_bhaiya_sh3jum.jpg",
+    instagram: "https://www.instagram.com/raodineshyadav1/?hl=en",
+    linkedin: "https://www.linkedin.com/in/dinesh-b5a830262/"
   },
   {
-    name: "Priya Sharma",
+    name: "Anil Jangid",
     role: "Co-Coordinator",
-    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898980/anil_bhaiya1_yudihd.jpg",
+    instagram: "https://www.instagram.com/aniljangir894/?hl=en",
+    linkedin: "https://www.linkedin.com/in/anil-kumar-364b7b280/"
   }
 ];
 
 const heads = [
   {
-    name: "Vikram Rathore",
-    role: "Design Head",
-    image: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    name: "Navneet Khileri",
+    role: "Techenical Head",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898981/Navneet_bhaiya_azmm90.jpg",
+    instagram: "https://www.instagram.com/navneet_khileri_rj31/?hl=en",
+    linkedin: "https://www.linkedin.com/in/navneet-khileri-b4b19625a/"
   },
   {
-    name: "Ananya Singh",
+    name: "Tanisha Garg",
     role: "Content Head",
-    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898982/tanisha_didi_a07cnv.jpg",
+    instagram: "https://www.instagram.com/azad__vichar/?hl=en",
+    linkedin: "https://www.linkedin.com/in/tanisha-garg-b52b24272/"
   },
   {
-    name: "Rajesh Choudhary",
-    role: "Technical Head",
-    image: "https://images.pexels.com/photos/1484794/pexels-photo-1484794.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    name: "Pankaj Mehata",
+    role: "Marketing & Pr Head",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761044510/mehta_c3rncb.jpg",
+    instagram: "https://www.instagram.com/pankajmehta9216/?hl=enom",
+    linkedin: "https://www.linkedin.com/in/pankaj-mehta-3a9913292/"
   },
   {
-    name: "Meera Joshi",
+    name: "Vikash Sehra",
     role: "Events Head",
-    image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
-  }
-];
-
-const designTeam = [
-  {
-    name: "Arjun Mehta",
-    role: "Graphic Designer",
-    image: "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
-  },
-  {
-    name: "Kavya Reddy",
-    role: "UI/UX Designer",
-    image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
-  },
-  {
-    name: "Rohit Sharma",
-    role: "Content Writer",
-    image: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
-  },
-  {
-    name: "Ishita Verma",
-    role: "Social Media Manager",
-    image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898980/Vikash_bhaiya_nmlu4e.jpg",
+    instagram: "https://www.instagram.com/vikas_sehra_49/?hl=en",
+    linkedin: "https://www.instagram.com/pankajmehta9216/?hl=en"
   }
 ];
 
 const techTeam = [
   {
-    name: "Aditya Kumar",
+    name: "Abahy Sharma",
     role: "Web Developer",
-    image: "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761045765/abhay_nju7y9.jpg",
     instagram: "https://instagram.com",
     linkedin: "https://linkedin.com"
   },
   {
-    name: "Sneha Patel",
-    role: "App Developer",
-    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    name: "Ashish Kumar",
+    role: "web Developer",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761035281/mera_photo_bbcm9p.jpg",
+    instagram: "https://www.instagram.com/ashish_rao9983/?hl=en",
+    linkedin: "https://www.linkedin.com/in/ashish-kumar-0a469a2a3/"
   },
   {
-    name: "Karan Singh",
-    role: "Database Manager",
-    image: "https://images.pexels.com/photos/1484794/pexels-photo-1484794.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    name: "Udit Namdev",
+    role: "Technical Support",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761035264/udit_uem0n9.jpg",
+    instagram: "https://www.instagram.com/udit_n09/?hl=en",
+    linkedin: "https://www.linkedin.com/in/udit-namdev-205a4a2a4/"
   },
   {
-    name: "Riya Gupta",
+    name: "Aditya Sharma",
     role: "Tech Support",
-    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761046060/aditya_jnxauz.jpg",
+    instagram: "https://www.instagram.com/itsadi_2006/?hl=en",
+    linkedin: "https://www.linkedin.com/in/aditya-sharma-1a96912a6/"
   }
 ];
 
 const eventTeam = [
   {
-    name: "Siddharth Malhotra",
+    name: "Himanshu Moond",
     role: "Event Coordinator",
-    image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761035322/himanshu_tlllxo.jpg",
+    instagram: "https://www.instagram.com/himanshujat125/?hl=en",
+    linkedin: "https://www.linkedin.com/in/himanshu-moond-6663912b4/"
   },
   {
-    name: "Pooja Kapoor",
+    name: "Manish Kumar",
     role: "PR Manager",
-    image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761036186/manish2_ea9sjl.jpg",
+    instagram: "https://www.instagram.com/_manish__sain/?hl=en",
+    linkedin: "https://www.linkedin.com/in/manish-kumar-996ab4381/"
   },
   {
-    name: "Nikhil Jain",
+    name: "Ankit Jhuria",
     role: "Sponsorship Lead",
-    image: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761035303/jhuria_csh1th.jpg",
+    instagram: "https://www.instagram.com/ankit.__.3/?hl=en",
+    linkedin: "https://www.linkedin.com/in/ankit-jhuria-2aa293291/"
   },
   {
-    name: "Divya Agarwal",
+    name: "Sachin Chauahan",
     role: "Logistics Manager",
     image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com"
+    instagram: "https://www.instagram.com/_sachin.__.7000_/?hl=en",
+    linkedin: "https://www.linkedin.com/in/sachin-kumar-chouhan-652168313/"
   }
 ];
+
+
+
 
 interface TeamMemberProps {
   name: string;
@@ -170,30 +142,30 @@ function TeamMemberCard({ name, role, image, instagram, linkedin }: TeamMemberPr
             alt={name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
-          <div className={`absolute inset-0 bg-gradient-to-t from-maroon via-maroon/50 to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-90' : 'opacity-0'}`}>
+          <div className={`absolute inset-0 bg-gradient-to-t from-red-900 via-red-900/50 to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-90' : 'opacity-0'}`}>
             <div className="absolute bottom-0 left-0 right-0 p-6 flex justify-center space-x-4">
               <a
                 href={instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-saffron transition-colors transform hover:scale-110"
+                className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors transform hover:scale-110"
               >
-                <Instagram className="text-maroon" size={24} />
+                <Instagram className="text-red-600" size={24} />
               </a>
               <a
                 href={linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-saffron transition-colors transform hover:scale-110"
+                className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors transform hover:scale-110"
               >
-                <Linkedin className="text-maroon" size={24} />
+                <Linkedin className="text-red-600" size={24} />
               </a>
             </div>
           </div>
         </div>
         <div className="p-6 text-center">
           <h3 className="text-xl font-bold text-gray-900 mb-1">{name}</h3>
-          <p className="text-saffron font-medium">{role}</p>
+          <p className="text-orange-500 font-medium">{role}</p>
         </div>
       </div>
     </motion.div>
@@ -203,7 +175,17 @@ function TeamMemberCard({ name, role, image, instagram, linkedin }: TeamMemberPr
 export default function Team() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <section className="relative py-20 px-4 bg-gradient-to-br from-saffron via-maroon to-red-900 overflow-hidden">
+      <section className="relative py-20 px-4 overflow-hidden">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898979/event4_raxetd.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-600/80 via-red-600/75 to-orange-500/80"></div>
+
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-20 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
         </div>
@@ -217,25 +199,35 @@ export default function Team() {
           <h1 className="text-6xl md:text-7xl font-bold text-white mb-4">
             Our Team
           </h1>
-          <div className="w-32 h-1 bg-gold mx-auto mb-6"></div>
-          <p className="text-xl text-cream">
+          <div className="w-32 h-1 bg-yellow-400 mx-auto mb-6"></div>
+          <p className="text-xl text-white">
             Meet the passionate individuals driving RCA's mission forward
           </p>
         </motion.div>
       </section>
 
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section 
+        className="py-20 px-4 relative"
+        style={{
+          // backgroundImage: 'url(https://images.unsplash.com/photo-1511379938547-c1f69b13d835?auto=format&fit=crop&w=1920&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-white/80"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-saffron to-maroon bg-clip-text text-transparent">
+            <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
               Coordinators
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-saffron to-maroon mx-auto mb-16"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto mb-16"></div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {coordinators.map((member) => (
@@ -246,18 +238,28 @@ export default function Team() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-cream">
-        <div className="max-w-7xl mx-auto">
+      <section 
+        className="py-20 px-4 relative"
+        style={{
+          // backgroundImage: 'url(https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1920&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-amber-50/80"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-saffron to-maroon bg-clip-text text-transparent">
+            <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
               Department Heads
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-saffron to-maroon mx-auto mb-16"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto mb-16"></div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {heads.map((member) => (
@@ -268,40 +270,28 @@ export default function Team() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section 
+        className="py-20 px-4 relative"
+        style={{
+          // backgroundImage: 'url(https://images.unsplash.com/photo-1511379938547-c1f69b13d835?auto=format&fit=crop&w=1920&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-white/80"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-saffron to-maroon bg-clip-text text-transparent">
-              Design & Content Team
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-saffron to-maroon mx-auto mb-16"></div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {designTeam.map((member) => (
-                <TeamMemberCard key={member.name} {...member} />
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4 bg-cream">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-saffron to-maroon bg-clip-text text-transparent">
+            <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
               Technical Team
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-saffron to-maroon mx-auto mb-16"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto mb-16"></div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {techTeam.map((member) => (
@@ -312,19 +302,28 @@ export default function Team() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section 
+        className="py-20 px-4 relative"
+        style={{
+          // backgroundImage: 'url(https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1920&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-amber-50/80"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-saffron to-maroon bg-clip-text text-transparent">
+            <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
               Event Management & PR Team
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-saffron to-maroon mx-auto mb-16"></div>
-
+            <div className="w-32 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto mb-16"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {eventTeam.map((member) => (
                 <TeamMemberCard key={member.name} {...member} />

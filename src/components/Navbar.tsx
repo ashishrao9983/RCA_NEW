@@ -20,9 +20,10 @@ export default function Navbar() {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center -ml-4 space-x-2">
             <div className="w-14 h-14 bg-gradient-to-br from-saffron to-maroon rounded-full flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-xl">RCA</span>
+              <span className="text-white font-bold text-xl"></span>
+              <img src="./images/RCA_logo.jpg" alt="RCA_logo" className="w-10 h-10 object-contain rounded-full" />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-saffron to-maroon bg-clip-text text-transparent">
               RCA

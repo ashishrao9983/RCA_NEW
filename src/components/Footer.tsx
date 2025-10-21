@@ -3,7 +3,7 @@ import { Instagram, Linkedin, Globe, Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-maroon to-red-900 text-white">
+    <footer className="bg-gradient-to-br from-orange-600 to-red-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -19,27 +19,27 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4 mt-4">
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/rca.nits/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-saffron rounded-full flex items-center justify-center transition-colors"
               >
                 <Instagram size={20} />
               </a>
-              <a
+              {/* <a
                 href="https://www.linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-saffron rounded-full flex items-center justify-center transition-colors"
               >
                 <Linkedin size={20} />
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 href="/"
                 className="w-10 h-10 bg-white/10 hover:bg-saffron rounded-full flex items-center justify-center transition-colors"
               >
                 <Globe size={20} />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -120,14 +120,14 @@ export default function Footer() {
             <p className="text-cream text-sm">
               © 2025 Rajasthan Cultural Association, NIT Silchar. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-cream text-sm">
+            {/* <div className="flex space-x-6 text-cream text-sm">
               <Link to="/privacy" className="hover:text-gold transition-colors">
                 Privacy Policy
               </Link>
               <Link to="/terms" className="hover:text-gold transition-colors">
                 Terms of Service
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
