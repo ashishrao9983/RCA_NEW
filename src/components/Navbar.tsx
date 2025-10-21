@@ -23,7 +23,7 @@ export default function Navbar() {
           <Link to="/" className="flex items-center -ml-4 space-x-2">
             <div className="w-14 h-14 bg-gradient-to-br from-saffron to-maroon rounded-full flex items-center justify-center shadow-lg">
               <span className="text-white font-bold text-xl"></span>
-              <img src="./images/RCA_logo.jpg" alt="RCA_logo" className="w-10 h-10 object-contain rounded-full" />
+              <img src="https://res.cloudinary.com/ddztmzvwl/image/upload/v1760908109/RCA_logo1_fwsdok.jpg" alt="RCA_logo" className="w-10 h-10 object-contain rounded-full" />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-saffron to-maroon bg-clip-text text-transparent">
               RCA

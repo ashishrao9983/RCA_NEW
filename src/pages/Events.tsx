@@ -9,7 +9,7 @@ const upcomingEvents = [
     date: "Nov 8, 2025",
     location: "SAC building, NIT Silchar",
     image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760906830/culture_fkwa1d.jpg",
-    registrationLink: "https://forms.google.com",
+    registrationLink: "https://forms.gle/GbUGHuUfvEm3J5mG9",
     participants: "200+"
   },
   {

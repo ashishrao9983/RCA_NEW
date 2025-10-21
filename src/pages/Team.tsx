@@ -111,6 +111,36 @@ const eventTeam = [
     linkedin: "https://www.linkedin.com/in/sachin-kumar-chouhan-652168313/"
   }
 ];
+const CulturalContentTeam = [
+  {
+    name: "Aashish kumawat",
+    role: "Cultural Head",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761051388/aashiah_sfpti4.jpg",
+    instagram: "https://www.instagram.com/aashishkumawatbajta/",
+    linkedin: "https://www.linkedin.com/in/aashish-kumar-kumawat-2999332a4/"
+  },
+  {
+    name: "Muskan Jangid",
+    role: "Cultural Head",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761050473/muskan_dgedou.jpg",
+    instagram: "https://www.instagram.com/muskanjangid663/",
+    linkedin: "https://www.linkedin.com/in/muskan-jangid-742322206/"
+  },
+  {
+    name: "Sapna Saini",
+    role: "Content Head",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761050474/sapna_dxnpyb.jpg",
+    instagram: "https://www.instagram.com/sapnasaini9433/",
+    linkedin: "https://www.linkedin.com/in/sapna-saini-0ba8072ba/"
+  },
+  {
+    name: "Kiran Meena",
+    role: "Content Head",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761050472/kiran_idbruo.jpg",
+    // instagram: "https://www.instagram.com/_sachin.__.7000_/?hl=en",
+    linkedin: "https://www.linkedin.com/in/kiran-meena-bb3528328/"
+  }
+];
 
 
 
@@ -119,7 +149,7 @@ interface TeamMemberProps {
   name: string;
   role: string;
   image: string;
-  instagram: string;
+  instagram?: string;
   linkedin: string;
 }
 
@@ -326,6 +356,38 @@ export default function Team() {
             <div className="w-32 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto mb-16"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {eventTeam.map((member) => (
+                <TeamMemberCard key={member.name} {...member} />
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Cultural & Content Team section (added) */}
+      <section 
+        className="py-20 px-4 relative"
+        style={{
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-white/80"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+              Cultural & Content Team
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto mb-16"></div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {CulturalContentTeam.map((member) => (
                 <TeamMemberCard key={member.name} {...member} />
               ))}
             </div>
