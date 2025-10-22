@@ -1,7 +1,44 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Instagram, Linkedin, Globe, Send } from 'lucide-react';
 
 export default function Contact() {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFeedback(null);
+    setLoading(true);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fullName, email, phoneNumber, subject, message }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.message || 'Failed to submit');
+      setFeedback({ type: 'success', message: data.message || 'Message sent successfully' });
+      // clear form
+      setFullName('');
+      setEmail('');
+      setPhoneNumber('');
+      setSubject('');
+      setMessage('');
+    } catch (err: any) {
+      setFeedback({ type: 'error', message: err.message || 'Submission failed' });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <section className="relative py-20 px-4 bg-gradient-to-br from-saffron via-maroon to-red-900 overflow-hidden">
@@ -154,7 +191,7 @@ export default function Contact() {
                 Send us a Message
               </h2>
 
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
                     Full Name
@@ -162,8 +199,11 @@ export default function Contact() {
                   <input
                     type="text"
                     id="name"
+                    value={fullName}
+                    onChange={e => setFullName(e.target.value)}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-saffron focus:outline-none transition-colors"
                     placeholder="Your name"
+                    required
                   />
                 </div>
 
@@ -174,8 +214,11 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-saffron focus:outline-none transition-colors"
                     placeholder="your.email@example.com"
+                    required
                   />
                 </div>
 
@@ -186,8 +229,11 @@ export default function Contact() {
                   <input
                     type="tel"
                     id="phone"
+                    value={phoneNumber}
+                    onChange={e => setPhoneNumber(e.target.value)}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-saffron focus:outline-none transition-colors"
                     placeholder="+91-XXXXXXXXXX"
+                    required
                   />
                 </div>
 
@@ -198,8 +244,11 @@ export default function Contact() {
                   <input
                     type="text"
                     id="subject"
+                    value={subject}
+                    onChange={e => setSubject(e.target.value)}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-saffron focus:outline-none transition-colors"
                     placeholder="What is this about?"
+                    required
                   />
                 </div>
 
@@ -210,17 +259,27 @@ export default function Contact() {
                   <textarea
                     id="message"
                     rows={5}
+                    value={message}
+                    onChange={e => setMessage(e.target.value)}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-saffron focus:outline-none transition-colors resize-none"
                     placeholder="Tell us more..."
+                    required
                   ></textarea>
                 </div>
 
+                {feedback && (
+                  <div className={`p-4 rounded-md ${feedback.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                    {feedback.message}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center px-8 py-4 bg-gradient-to-r from-saffron to-maroon text-white font-semibold rounded-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                  disabled={loading}
+                  className="w-full flex items-center justify-center px-8 py-4 bg-gradient-to-r from-saffron to-maroon text-white font-semibold rounded-xl hover:shadow-2xl transition-all transform hover:scale-105 disabled:opacity-60"
                 >
                   <Send className="mr-2" size={20} />
-                  Send Message
+                  {loading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </motion.div>
