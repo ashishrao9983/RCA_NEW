@@ -18,7 +18,7 @@ const alumni2023 = [
 		batch: '2023'
 	},
 	{
-		name: 'Dr.Nidahi Yadav',
+		name: 'Dr.Nidhi Yadav',
 		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761137213/WhatsApp_Image_2025-10-22_at_18.14.25_44a2d3a5_xpbcqy.jpg',
 		batch: '2023'
 	},
