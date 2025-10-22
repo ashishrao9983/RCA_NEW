@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, ExternalLink } from 'lucide-react';
+import Countdown from '../components/Countdown';
 
 const upcomingEvents = [
   {
@@ -103,6 +104,16 @@ export default function Events() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <Countdown targetDate="2025-11-08T00:00:00" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
             <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
               Upcoming Events
@@ -117,48 +128,93 @@ export default function Events() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow group"
+                  whileHover={{ y: -10 }}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden group relative"
                 >
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+                    initial={false}
+                    whileHover={{ opacity: 0.1 }}
+                  />
+                  
                   <div className="relative h-64 overflow-hidden">
-                    <img
+                    <motion.img
                       src={event.image}
                       alt={event.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.6 }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-2xl font-bold text-white mb-2">{event.title}</h3>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-600/20 opacity-0 group-hover:opacity-100"
+                        initial={false}
+                        animate={{ opacity: [0, 0.2, 0] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      />
                     </div>
+                    <motion.div 
+                      className="absolute bottom-4 left-4 right-4"
+                      initial={false}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <h3 className="text-2xl font-bold text-white mb-2">{event.title}</h3>
+                    </motion.div>
                   </div>
 
-                  <div className="p-6">
+                  <motion.div 
+                    className="p-6"
+                    initial={false}
+                    whileHover={{ y: -5 }}
+                  >
                     <p className="text-gray-700 mb-4 leading-relaxed">{event.description}</p>
 
                     <div className="space-y-2 mb-6">
-                      <div className="flex items-center text-gray-600">
+                      <motion.div 
+                        className="flex items-center text-gray-600 p-2 rounded-lg hover:bg-orange-50 transition-colors"
+                        whileHover={{ x: 5 }}
+                      >
                         <Calendar className="mr-2 text-orange-500" size={20} />
                         <span>{event.date}</span>
-                      </div>
-                      <div className="flex items-center text-gray-600">
+                      </motion.div>
+                      <motion.div 
+                        className="flex items-center text-gray-600 p-2 rounded-lg hover:bg-orange-50 transition-colors"
+                        whileHover={{ x: 5 }}
+                      >
                         <MapPin className="mr-2 text-orange-500" size={20} />
                         <span>{event.location}</span>
-                      </div>
-                      <div className="flex items-center text-gray-600">
+                      </motion.div>
+                      <motion.div 
+                        className="flex items-center text-gray-600 p-2 rounded-lg hover:bg-orange-50 transition-colors"
+                        whileHover={{ x: 5 }}
+                      >
                         <Users className="mr-2 text-orange-500" size={20} />
                         <span>{event.participants} Expected</span>
-                      </div>
+                      </motion.div>
                     </div>
 
-                    <a
-                      href={event.registrationLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-semibold rounded-full hover:shadow-lg transition-all transform hover:scale-105"
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      Register Now
-                      <ExternalLink className="ml-2" size={18} />
-                    </a>
-                  </div>
+                      <a
+                        href={event.registrationLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-semibold rounded-full shadow-lg group/btn relative overflow-hidden"
+                      >
+                        <motion.span 
+                          className="absolute inset-0 bg-white"
+                          initial={{ x: "100%" }}
+                          whileHover={{ x: "-100%" }}
+                          transition={{ duration: 0.3 }}
+                          style={{ opacity: 0.2 }}
+                        />
+                        <span className="relative">Register Now</span>
+                        <ExternalLink className="ml-2 group-hover/btn:translate-x-1 transition-transform" size={18} />
+                      </a>
+                    </motion.div>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
