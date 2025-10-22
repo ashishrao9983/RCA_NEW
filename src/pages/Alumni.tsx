@@ -1,77 +1,69 @@
 import { motion } from 'framer-motion';
-import { Instagram, Linkedin, GraduationCap } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 const alumni2023 = [
 	{
-		name: 'Arjun Rajput',
-		batch: '2023',
-		image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400',
-		instagram: 'https://instagram.com',
-		linkedin: 'https://linkedin.com',
+		name: 'ACP.Kamal Sharma',
+		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761137213/WhatsApp_Image_2025-10-22_at_18.14.25_7e7c4c7d_t1krmb.jpg',
+		batch: '2023'
 	},
 	{
-		name: 'Priya Sharma',
-		batch: '2023',
-		image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400',
-		instagram: 'https://instagram.com',
-		linkedin: 'https://linkedin.com',
+		name: 'Dr.Gaurav Yadav',
+		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761137214/WhatsApp_Image_2025-10-22_at_18.14.26_03c17c44_pyoxa2.jpg',
+		batch: '2023'
 	},
 	{
-		name: 'Vikram Choudhary',
-		batch: '2023',
-		image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=400',
-		instagram: 'https://instagram.com',
-		linkedin: 'https://linkedin.com',
+		name: 'Ankit Goyal',
+		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761137213/WhatsApp_Image_2025-10-22_at_18.14.29_859f00c7_gudkwk.jpg',
+		batch: '2023'
 	},
 	{
-		name: 'Kavya Reddy',
-		batch: '2023',
-		image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
-		instagram: 'https://instagram.com',
-		linkedin: 'https://linkedin.com',
+		name: 'Dr.Nidahi Yadav',
+		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761137213/WhatsApp_Image_2025-10-22_at_18.14.25_44a2d3a5_xpbcqy.jpg',
+		batch: '2023'
+	},
+	{
+		name: 'IES.Amit Suthar',
+		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761137212/WhatsApp_Image_2025-10-22_at_18.14.27_21aa3868_pmhk3y.jpg',
+		batch: '2023'
+	},
+	{
+		name: 'Bhavani Sharma',
+		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761137209/WhatsApp_Image_2025-10-22_at_18.15.22_1507dd19_pxfci9.jpg',
+		batch: '2023'
 	},
 ];
 
 const alumni2024 = [
 	{
-		name: 'Rahul Meena',
-		batch: '2024',
-		image: 'https://images.pexels.com/photos/1484794/pexels-photo-1484794.jpeg?auto=compress&cs=tinysrgb&w=400',
-		instagram: 'https://instagram.com',
-		linkedin: 'https://linkedin.com',
+		name: 'Sagar Verma',
+		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761137671/WhatsApp_Image_2025-10-22_at_18.17.22_69d0f55e_owpzdy.jpg',
+		batch: '2024'
 	},
 	{
-		name: 'Ananya Singh',
-		batch: '2024',
-		image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=400',
-		instagram: 'https://instagram.com',
-		linkedin: 'https://linkedin.com',
+		name: 'Ajay Meena',
+		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761137789/WhatsApp_Image_2025-10-22_at_18.26.06_591d97ea_fbhr3r.jpg',
+		batch: '2024'
 	},
 	{
-		name: 'Siddharth Joshi',
-		batch: '2024',
-		image: 'https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=400',
-		instagram: 'https://instagram.com',
-		linkedin: 'https://linkedin.com',
+		name: 'Kavya Bhardwaj',
+		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761138719/WhatsApp_Image_2025-10-22_at_18.25.35_e2e6ab3c_jso4y4.jpg',
+		batch: '2024'
 	},
 	{
-		name: 'Ishita Verma',
-		batch: '2024',
-		image: 'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400',
-		instagram: 'https://instagram.com',
-		linkedin: 'https://linkedin.com',
-	},
+		name: 'Pankaj Meena',
+		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761137936/WhatsApp_Image_2025-10-22_at_18.28.31_2a8fd965_d1nzdq.jpg',
+		batch: '2024'
+	}
 ];
 
 interface AlumniCardProps {
 	name: string;
-	batch: string;
 	image: string;
-	instagram: string;
-	linkedin: string;
+	batch: string;
 }
 
-function AlumniCard({ name, batch, image, instagram, linkedin }: AlumniCardProps) {
+function AlumniCard({ name, image, batch }: AlumniCardProps) {
 	return (
 		<motion.div
 			initial={{ opacity: 0, scale: 0.9 }}
@@ -87,34 +79,11 @@ function AlumniCard({ name, batch, image, instagram, linkedin }: AlumniCardProps
 					alt={name}
 					className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
 				/>
-				<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-					<div className="absolute bottom-6 left-0 right-0 flex justify-center space-x-4">
-						<a
-							href={instagram}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-saffron transition-colors transform hover:scale-110"
-						>
-							<Instagram className="text-maroon" size={24} />
-						</a>
-						<a
-							href={linkedin}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-saffron transition-colors transform hover:scale-110"
-						>
-							<Linkedin className="text-maroon" size={24} />
-						</a>
-					</div>
-				</div>
-				<div className="absolute top-4 right-4 bg-gradient-to-r from-saffron to-maroon text-white px-4 py-2 rounded-full font-semibold flex items-center space-x-2">
-					<GraduationCap size={20} />
-					<span>{batch}</span>
-				</div>
+				{/* batch badge removed as requested */}
 			</div>
 			<div className="p-6 text-center">
 				<h3 className="text-xl font-bold text-gray-900 mb-1">{name}</h3>
-				<p className="text-saffron font-medium">Batch of {batch}</p>
+				{/* batch line removed as requested */}
 			</div>
 		</motion.div>
 	);
@@ -157,7 +126,6 @@ export default function Alumni() {
 						transition={{ duration: 0.6 }}
 					>
 						<h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-saffron to-maroon bg-clip-text text-transparent">
-							Batch of 2024
 						</h2>
 						<div className="w-32 h-1 bg-gradient-to-r from-saffron to-maroon mx-auto mb-16"></div>
 
@@ -179,7 +147,6 @@ export default function Alumni() {
 						transition={{ duration: 0.6 }}
 					>
 						<h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-saffron to-maroon bg-clip-text text-transparent">
-							Batch of 2023
 						</h2>
 						<div className="w-32 h-1 bg-gradient-to-r from-saffron to-maroon mx-auto mb-16"></div>
 
@@ -208,7 +175,9 @@ export default function Alumni() {
 							connected with the RCA family.
 						</p>
 						<a
-							href="mailto:Aniljangid8991@gmail.com"
+							href="https://forms.gle/GpRmYMoc8DPog2uT6"
+							target="_blank"
+							rel="noopener noreferrer"
 							className="inline-flex items-center px-8 py-4 bg-white text-maroon font-semibold rounded-full hover:bg-cream transition-colors shadow-2xl transform hover:scale-105"
 						>
 							Get in Touch

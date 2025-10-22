@@ -1,58 +1,56 @@
 import { motion } from 'framer-motion';
 import { Instagram, Linkedin } from 'lucide-react';
 import { useState } from 'react';
-
+const Faculty = {
+  name: "Dr. Anup Kumar Sharma",
+  role: "Faculty",
+  image: "https://res.cloudinary.com/dy8vdilqu/image/upload/v1761135194/anup_svc2yg.jpg",
+  linkedin: "https://www.linkedin.com/in/dr-anup-kumar-sharma-9828a5232/"
+};
 const coordinators = [
   {
     name: "Dinesh Yadav",
-    role: "Coordinator",
-    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898982/Dinesh_bhaiya_sh3jum.jpg",
+    role: "Founder",
+    image: "https://res.cloudinary.com/dy8vdilqu/image/upload/v1761139576/WhatsApp_Image_2025-10-22_at_18.55.39_90b19416_tjc3zz.jpg",
     instagram: "https://www.instagram.com/raodineshyadav1/?hl=en",
     linkedin: "https://www.linkedin.com/in/dinesh-b5a830262/"
   },
-  {
-    name: "Anil Jangid",
-    role: "Co-Coordinator",
-    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898980/anil_bhaiya1_yudihd.jpg",
-    instagram: "https://www.instagram.com/aniljangir894/?hl=en",
-    linkedin: "https://www.linkedin.com/in/anil-kumar-364b7b280/"
-  }
 ];
 
 const heads = [
   {
-    name: "Navneet Khileri",
-    role: "Techenical Head",
-    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898981/Navneet_bhaiya_azmm90.jpg",
-    instagram: "https://www.instagram.com/navneet_khileri_rj31/?hl=en",
-    linkedin: "https://www.linkedin.com/in/navneet-khileri-b4b19625a/"
-  },
-  {
     name: "Tanisha Garg",
-    role: "Content Head",
+    role: "Coordinator",
     image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898982/tanisha_didi_a07cnv.jpg",
     instagram: "https://www.instagram.com/azad__vichar/?hl=en",
     linkedin: "https://www.linkedin.com/in/tanisha-garg-b52b24272/"
   },
   {
-    name: "Pankaj Mehata",
-    role: "Marketing & Pr Head",
-    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761044510/mehta_c3rncb.jpg",
+    name: "Anil Jangid",
+    role: "Coordinator",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898980/anil_bhaiya1_yudihd.jpg",
+    instagram: "https://www.instagram.com/aniljangir894/?hl=en",
+    linkedin: "https://www.linkedin.com/in/anil-kumar-364b7b280/"
+  },
+  // {
+  //   name: "Navneet Khileri",
+  //   role: "Coordinators",
+  //   image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898981/Navneet_bhaiya_azmm90.jpg",
+  //   instagram: "https://www.instagram.com/navneet_khileri_rj31/?hl=en",
+  //   linkedin: "https://www.linkedin.com/in/navneet-khileri-b4b19625a/"
+  // },
+  {
+    name: "Suresh Gurjar",
+    role: "Coordinator",
+    image: "https://res.cloudinary.com/dy8vdilqu/image/upload/v1761136144/WhatsApp_Image_2025-10-22_at_17.49.01_c1e85e99_p7ldse.jpg",
     instagram: "https://www.instagram.com/pankajmehta9216/?hl=enom",
     linkedin: "https://www.linkedin.com/in/pankaj-mehta-3a9913292/"
   },
-  {
-    name: "Vikash Sehra",
-    role: "Events Head",
-    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898980/Vikash_bhaiya_nmlu4e.jpg",
-    instagram: "https://www.instagram.com/vikas_sehra_49/?hl=en",
-    linkedin: "https://www.instagram.com/pankajmehta9216/?hl=en"
-  }
 ];
 
 const techTeam = [
   {
-    name: "Abahy Sharma",
+    name: "Abhay Sharma",
     role: "Web Developer",
     image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761045765/abhay_nju7y9.jpg",
     instagram: "https://instagram.com",
@@ -106,7 +104,7 @@ const eventTeam = [
   {
     name: "Sachin Chauahan",
     role: "Logistics Manager",
-    image: "https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=400",
+    image: "https://res.cloudinary.com/dy8vdilqu/image/upload/v1761140279/WhatsApp_Image_2025-10-22_at_19.07.03_5df45b48_td7vok.jpg",
     instagram: "https://www.instagram.com/_sachin.__.7000_/?hl=en",
     linkedin: "https://www.linkedin.com/in/sachin-kumar-chouhan-652168313/"
   }
@@ -163,14 +161,16 @@ function TeamMemberCard({ name, role, image, instagram, linkedin }: TeamMemberPr
       viewport={{ once: true }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="relative group"
+      className="relative group h-full"
     >
-      <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
-        <div className="relative h-80 overflow-hidden">
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow flex flex-col h-full">
+        {/* Image area with fixed aspect ratio so all cards match height */}
+        <div className="relative w-full aspect-[3/4] overflow-hidden bg-gray-100">
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            loading="lazy"
+            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 p-4 bg-white"
           />
           <div className={`absolute inset-0 bg-gradient-to-t from-red-900 via-red-900/50 to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-90' : 'opacity-0'}`}>
             <div className="absolute bottom-0 left-0 right-0 p-6 flex justify-center space-x-4">
@@ -193,6 +193,7 @@ function TeamMemberCard({ name, role, image, instagram, linkedin }: TeamMemberPr
             </div>
           </div>
         </div>
+
         <div className="p-6 text-center">
           <h3 className="text-xl font-bold text-gray-900 mb-1">{name}</h3>
           <p className="text-orange-500 font-medium">{role}</p>
@@ -236,6 +237,28 @@ export default function Team() {
         </motion.div>
       </section>
 
+      {/* Faculty Advisor Section */}
+      <section className="py-12 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl font-bold mb-2">Faculty</h2>
+            <p className="text-gray-600">Our guiding mentor</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="md:col-start-2">
+              <TeamMemberCard key={Faculty.name} {...Faculty} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section 
         className="py-20 px-4 relative"
         style={{
@@ -247,7 +270,7 @@ export default function Team() {
       >
         <div className="absolute inset-0 bg-white/80"></div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10 ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -255,13 +278,15 @@ export default function Team() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-              Coordinators
+              Founder
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto mb-16"></div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
               {coordinators.map((member) => (
-                <TeamMemberCard key={member.name} {...member} />
+                <div key={member.name} className="w-full md:w-1/2 lg:w-1/3">
+                  <TeamMemberCard {...member} />
+                </div>
               ))}
             </div>
           </motion.div>
@@ -287,13 +312,15 @@ export default function Team() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-5xl font-bold text-center mb-4 bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
-              Department Heads
+              Coordinators
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto mb-16"></div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="flex flex-wrap justify-center gap-8">
               {heads.map((member) => (
-                <TeamMemberCard key={member.name} {...member} />
+                <div key={member.name} className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] flex justify-center">
+                  <TeamMemberCard {...member} />
+                </div>
               ))}
             </div>
           </motion.div>

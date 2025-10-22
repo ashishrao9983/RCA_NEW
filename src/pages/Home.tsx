@@ -123,7 +123,7 @@ const AboutUsSection = () => (
               The <span className="font-semibold text-red-600">Rajasthan Cultural Association (RCA)</span> is a vibrant community at NIT Silchar dedicated to celebrating and preserving the rich cultural heritage of Rajasthan. Our association brings together students who share a passion for Rajasthani traditions, art, music, dance, and cuisine.
             </p>
             <p className="text-lg">
-              Through various cultural events, festivals, and workshops, we create a platform for students to stay connected with their roots while studying far from home. From organizing grand celebrations during Gangaur and Teej to hosting folk dance performances and traditional music nights, RCA ensures that the colorful spirit of Rajasthan thrives on our campus.
+              Through cultural events, festivals, and workshops, we help students stay connected with their roots. From Gangaur and Teej celebrations to folk dance and traditional music nights, RCA keeps Rajasthan's vibrant spirit alive on campus.
             </p>
             <p className="text-lg">
               We believe in fostering unity, cultural exchange, and creating lasting memories. Whether you're from Rajasthan or simply fascinated by its culture, RCA welcomes everyone to be part of our journey in keeping traditions alive and vibrant.
@@ -345,11 +345,11 @@ const ContactSection = () => (
           </a>
           <span className="hidden md:block text-gray-400">|</span>
           <a
-            href="mailto:Aniljangid8991@gmail.com"
+            href="mailto:abhayrsharma1000@gmail.com"
             className="flex items-center text-lg text-red-600 font-semibold hover:text-orange-500 transition-colors"
           >
             <Star className="mr-2" size={20} />
-            Aniljangid8991@gmail.com
+            abhayrsharma1000@gmail.com
           </a>
         </div>
         <button

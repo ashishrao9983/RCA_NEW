@@ -115,10 +115,10 @@ export default function Contact() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Email</h3>
                     <a
-                      href="mailto:Aniljangid8991@gmail.com"
+                      href="mailto:abhayrsharma1000@gmail.com"
                       className="text-maroon hover:text-saffron transition-colors font-medium"
                     >
-                      Aniljangid8991@gmail.com
+                      abhayrsharma1000@gmail.com
                     </a>
                   </div>
                 </motion.div>
@@ -136,10 +136,10 @@ export default function Contact() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Phone</h3>
                     <a
-                      href="tel:+918949519891"
+                      href="tel:+918824631483"
                       className="text-maroon hover:text-saffron transition-colors font-medium"
                     >
-                      +91-8949519891
+                      +91-8824631483
                     </a>
                   </div>
                 </motion.div>
@@ -155,14 +155,14 @@ export default function Contact() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
                   <a
-                    href="https://www.instagram.com"
+                    href="https://www.instagram.com/rca.nits/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-14 h-14 bg-gradient-to-r from-saffron to-maroon rounded-full flex items-center justify-center hover:shadow-lg transition-all transform hover:scale-110"
                   >
                     <Instagram className="text-white" size={28} />
                   </a>
-                  <a
+                  {/* <a
                     href="https://www.linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -175,7 +175,7 @@ export default function Contact() {
                     className="w-14 h-14 bg-gradient-to-r from-saffron to-maroon rounded-full flex items-center justify-center hover:shadow-lg transition-all transform hover:scale-110"
                   >
                     <Globe className="text-white" size={28} />
-                  </a>
+                  </a> */}
                 </div>
               </motion.div>
             </motion.div>
@@ -305,7 +305,7 @@ export default function Contact() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="mailto:Aniljangid8991@gmail.com"
+                href="mailto:abhayrsharma1000@gmail.com"
                 className="px-8 py-4 bg-white text-maroon font-semibold rounded-full hover:bg-cream transition-colors shadow-2xl"
               >
                 Become a Member
