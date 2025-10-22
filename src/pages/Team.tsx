@@ -13,7 +13,8 @@ const coordinators = [
     role: "Founder",
     image: "https://res.cloudinary.com/dy8vdilqu/image/upload/v1761139576/WhatsApp_Image_2025-10-22_at_18.55.39_90b19416_tjc3zz.jpg",
     instagram: "https://www.instagram.com/raodineshyadav1/?hl=en",
-    linkedin: "https://www.linkedin.com/in/dinesh-b5a830262/"
+    linkedin: "https://www.linkedin.com/in/dinesh-b5a830262/",
+    bio: "The motive behind creating RCA was just like a garland that has two main components — countless precious beads and the thread that holds them together. I chose to become that thread which connects all those countless beads together as one."
   },
 ];
 
@@ -149,9 +150,10 @@ interface TeamMemberProps {
   image: string;
   instagram?: string;
   linkedin: string;
+  bio?: string;
 }
 
-function TeamMemberCard({ name, role, image, instagram, linkedin }: TeamMemberProps) {
+function TeamMemberCard({ name, role, image, instagram, linkedin, bio }: TeamMemberProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -197,6 +199,10 @@ function TeamMemberCard({ name, role, image, instagram, linkedin }: TeamMemberPr
         <div className="p-6 text-center">
           <h3 className="text-xl font-bold text-gray-900 mb-1">{name}</h3>
           <p className="text-orange-500 font-medium">{role}</p>
+          {/** render bio if present */}
+          {bio && (
+            <p className="mt-3 text-sm text-gray-600">{bio}</p>
+          )}
         </div>
       </div>
     </motion.div>

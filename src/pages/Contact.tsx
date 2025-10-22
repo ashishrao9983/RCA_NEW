@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Instagram, Linkedin, Globe, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Send } from 'lucide-react';
 
 export default function Contact() {
   const [fullName, setFullName] = useState('');
@@ -17,7 +17,8 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/contact', {
+      const base = import.meta.env.VITE_API_BASE_URL || 'https://backend-roan-pi-63.vercel.app';
+      const res = await fetch(`${base}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fullName, email, phoneNumber, subject, message }),
