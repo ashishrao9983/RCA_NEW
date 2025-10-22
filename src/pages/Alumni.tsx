@@ -28,7 +28,7 @@ const alumni2023 = [
 		batch: '2023'
 	},
 	{
-		name: 'Bhavani Sharma',
+		name: 'Bhawani Sharma',
 		image: 'https://res.cloudinary.com/dy8vdilqu/image/upload/v1761137209/WhatsApp_Image_2025-10-22_at_18.15.22_1507dd19_pxfci9.jpg',
 		batch: '2023'
 	},
