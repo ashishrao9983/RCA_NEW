@@ -36,7 +36,7 @@ const heads = [
    {
     name: "Navneet Khileri",
     role: "Coordinators",
-    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898981/Navneet_bhaiya_azmm90.jpg",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1761203056/khileri_el7zh2.jpg",
   instagram: "https://www.instagram.com/navneet_khileri_rj31/?hl=en",
     linkedin: "https://www.linkedin.com/in/navneet-khileri-b4b19625a/"
    },
