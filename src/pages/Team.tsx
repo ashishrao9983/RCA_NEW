@@ -33,13 +33,13 @@ const heads = [
     instagram: "https://www.instagram.com/aniljangir894/?hl=en",
     linkedin: "https://www.linkedin.com/in/anil-kumar-364b7b280/"
   },
-  // {
-  //   name: "Navneet Khileri",
-  //   role: "Coordinators",
-  //   image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898981/Navneet_bhaiya_azmm90.jpg",
-  //   instagram: "https://www.instagram.com/navneet_khileri_rj31/?hl=en",
-  //   linkedin: "https://www.linkedin.com/in/navneet-khileri-b4b19625a/"
-  // },
+   {
+    name: "Navneet Khileri",
+    role: "Coordinators",
+    image: "https://res.cloudinary.com/ddztmzvwl/image/upload/v1760898981/Navneet_bhaiya_azmm90.jpg",
+  instagram: "https://www.instagram.com/navneet_khileri_rj31/?hl=en",
+    linkedin: "https://www.linkedin.com/in/navneet-khileri-b4b19625a/"
+   },
   {
     name: "Suresh Gurjar",
     role: "Coordinator",
