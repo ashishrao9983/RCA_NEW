@@ -479,12 +479,79 @@ export default function Home() {
     }
   };
 
+  // Media Session API: set action handlers once; set metadata when playback starts
+  useEffect(() => {
+    if (typeof navigator === 'undefined' || !(navigator as any).mediaSession) return;
+    const ms = (navigator as any).mediaSession;
+
+    try {
+      ms.setActionHandler('play', async () => {
+        if (audioRef.current) {
+          try {
+            await audioRef.current.play();
+            setIsPlaying(true);
+            setWantToPlay(true);
+          } catch {}
+        }
+      });
+
+      ms.setActionHandler('pause', () => {
+        if (audioRef.current) {
+          audioRef.current.pause();
+          setIsPlaying(false);
+          setWantToPlay(false);
+        }
+      });
+
+      ms.setActionHandler('stop', () => {
+        if (audioRef.current) {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+          setIsPlaying(false);
+          setWantToPlay(false);
+        }
+      });
+    } catch (err) {
+      // ignore errors on unsupported browsers
+    }
+
+    return () => {
+      try {
+        ms.setActionHandler('play', null);
+        ms.setActionHandler('pause', null);
+        ms.setActionHandler('stop', null);
+      } catch {}
+    };
+  }, []);
+
+  // keep playbackState in sync with UI state
+  useEffect(() => {
+    if (typeof navigator === 'undefined' || !(navigator as any).mediaSession) return;
+    try {
+      (navigator as any).mediaSession.playbackState = isPlaying ? 'playing' : 'paused';
+      // set metadata when playback starts - some browsers only fetch artwork after play
+      if (isPlaying) {
+        try {
+          (navigator as any).mediaSession.metadata = new (window as any).MediaMetadata({
+            title: 'RCA NIT Silchar',
+            artist: 'RCA',
+            album: 'RCA Website',
+            artwork: [
+              { src: 'https://res.cloudinary.com/ddztmzvwl/image/upload/v1760908109/RCA_logo1_fwsdok.jpg', sizes: '512x512', type: 'image/jpeg' }
+            ]
+          });
+        } catch {}
+      }
+    } catch {}
+  }, [isPlaying]);
+
   return (
     <div className="min-h-screen relative">
       {/* Background audio */}
       <audio
         ref={audioRef}
         src="https://res.cloudinary.com/ddztmzvwl/video/upload/v1760943911/sam_Jaisalmer_Rajasthan_padharo_mhare_Desh_re_qmtk5y.mp3"
+        crossOrigin="anonymous"
         loop
         preload="auto"
       />

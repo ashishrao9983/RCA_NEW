@@ -63,7 +63,7 @@ interface AlumniCardProps {
 	batch: string;
 }
 
-function AlumniCard({ name, image, batch }: AlumniCardProps) {
+function AlumniCard({ name, image }: AlumniCardProps) {
 	return (
 		<motion.div
 			initial={{ opacity: 0, scale: 0.9 }}
@@ -73,14 +73,14 @@ function AlumniCard({ name, image, batch }: AlumniCardProps) {
 			transition={{ duration: 0.3 }}
 			className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all group"
 		>
-			<div className="relative h-80 overflow-hidden">
-				<img
-					src={image}
-					alt={name}
-					className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-				/>
-				{/* batch badge removed as requested */}
-			</div>
+				<div className="relative w-full aspect-[4/5] overflow-hidden bg-white flex items-center justify-center">
+					<img
+						src={image}
+						alt={name}
+						className="max-w-full max-h-full object-contain transition-transform duration-500 p-4"
+					/>
+					{/* batch badge removed as requested */}
+				</div>
 			<div className="p-6 text-center">
 				<h3 className="text-xl font-bold text-gray-900 mb-1">{name}</h3>
 				{/* batch line removed as requested */}
